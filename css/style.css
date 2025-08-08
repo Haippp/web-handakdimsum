@@ -427,9 +427,10 @@ footer .credit a {
   }
 
   .about .row .about-img img {
-    width: 250px; /* sesuaikan lebar gambar */
+    width: 280px; /* sesuaikan lebar gambar */
     height: auto; /* biar proporsional */
     object-position: center; /* posisikan gambar di tengah */
+    padding-right: 1rem; /* padding kanan*/
   }
 
   .menu .row .menu-card {
