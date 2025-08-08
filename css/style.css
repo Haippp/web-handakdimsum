@@ -88,7 +88,7 @@ body {
   min-height: 100vh; /* tinggi minimal 100% viewport */
   display: flex;
   align-items: center; /* rata tengah secara vertikal */
-  background-image: url("../../img/nyoba.jpg"); /* gambar latar belakang */
+  background-image: url("../img/bg.jpg"); /* gambar latar belakang */
   background-repeat: no-repeat; /* tidak ada pengulangan gambar */
   background-size: cover; /* gambar menutupi seluruh area */
   background-position: center; /* posisikan gambar di tengah */
