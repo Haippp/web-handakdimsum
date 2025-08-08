@@ -1,0 +1,444 @@
+:root {
+  --primary: #fee963;
+  --bg: #583204;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+}
+
+/*navbar*/
+.navbar {
+  display: flex;
+  align-items: center; /* logo dan menu sejajar */
+  justify-content: space-between;
+  padding: 1rem 7%; /* beri jarak dari pinggir */
+  background-color: rgba(88, 50, 4, 0.521); /* warna navbar */
+  border-bottom: 1px solid var (--primary); /* garis bawah navbar */
+  position: fixed; /* tetap di atas saat scroll */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999; /* pastikan navbar di atas elemen lain */
+}
+
+/*logo*/
+.logo img {
+  width: 70px; /* ubah ukuran logo jadi kecil */
+  height: auto; /* biar proporsional */
+  display: flex;
+}
+
+.navbar .navbar-nav a {
+  color: #fff; /* warna teks navbar */
+  font-size: 1rem; /* ukuran font */
+  margin: 0 1rem; /* jarak antar menu */
+  display: inline-block; /* agar menu bisa di hover */
+}
+
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary); /* warna teks saat hover */
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem; /* jarak bawah */
+  border-bottom: 0.1rem solid var(--primary); /* garis bawah */
+  transform: scaleX(0); /* awalnya tidak terlihat */
+  transition: 0.2s linear; /* transisi saat hover */
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5); /* tampilkan garis bawah saat hover */
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem; /* jarak antar elemen */
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--primary); /* warna teks saat hover */
+}
+
+#hamburger-menu {
+  display: none; /* sembunyikan hamburger menu di desktop */
+}
+
+/*hero section*/
+.hero {
+  min-height: 100vh; /* tinggi minimal 100% viewport */
+  display: flex;
+  align-items: center; /* rata tengah secara vertikal */
+  background-image: url("../../img/nyoba.jpg"); /* gambar latar belakang */
+  background-repeat: no-repeat; /* tidak ada pengulangan gambar */
+  background-size: cover; /* gambar menutupi seluruh area */
+  background-position: center; /* posisikan gambar di tengah */
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(
+    0deg,
+    rgba(88, 50, 4, 1) 8%,
+    rgba(255, 255, 255, 0) 25%
+  ); /* gradasi warna */
+  bottom: 0; /* posisikan di bawah */
+}
+
+.hero .content {
+  padding: 1.4rem 7%; /* beri jarak dalam konten */
+  max-width: 60rem; /* lebar maksimal konten */
+}
+
+.hero .content h1 {
+  font-size: 3rem; /* ukuran font judul */
+  color: #fff; /* warna judul */
+  margin-bottom: 1rem; /* jarak bawah judul */
+  text-shadow: 1px 1px 3px rgba(1, 1, 1, 0.5); /* bayangan teks */
+  line-height: 1.2; /* jarak antar baris */
+}
+
+.hero .content h1 span {
+  color: var(--primary); /* warna khusus untuk teks tertentu */
+}
+
+.hero .content p {
+  font-size: 1.3rem; /* ukuran font paragraf */
+  color: #fff; /* warna paragraf */
+  margin-top: 1rem; /* jarak atas paragraf */
+  line-height: 1.4; /* jarak antar baris */
+  font-weight: 230; /* ketebalan font */
+  text-shadow: 1px 1px 3px rgba(1, 1, 1, 0.5); /* bayangan teks */
+  mix-blend-mode: difference; /* efek pencampuran warna */
+}
+
+.hero .content .cta {
+  margin-top: 1rem; /* jarak atas tombol */
+  padding: 0.6rem 1.5rem; /* padding tombol */
+  background-color: var(--primary); /* warna latar belakang tombol */
+  color: #583204; /* warna teks tombol */
+  font-size: 1.2rem; /* ukuran font tombol */
+  border-radius: 0.5rem; /* sudut melengkung tombol */
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5); /* bayangan tombol */
+  display: inline-block;
+}
+
+/*about section*/
+.about,
+.menu, .contact {
+  padding: 8rem 7% 1.4rem; /* beri jarak dalam konten */
+  padding-bottom: 50px; /* beri jarak bawah */
+}
+
+.about h2,
+.menu h2, .contact h2 {
+  font-size: 2.6rem; /* ukuran font judul */
+  text-align: center; /* rata tengah */
+  margin-bottom: 3rem; /* jarak bawah judul */
+}
+
+.about h2 span,
+.menu h2 span, .contact h2 span {
+  color: var(--primary); /* warna khusus untuk teks tertentu */
+}
+
+.about .row {
+  display: flex;
+  align-items: flex-start; /* sejajarkan bagian atas gambar dan teks */
+  gap: 1rem; /* kasih jarak kecil antar kolom */
+}
+
+.about .row .about-img {
+  flex: 0 0 auto;
+}
+
+.about .row .about-img img {
+  width: 500px; /* atau sesuaikan */
+  height: auto;
+  display: block;
+}
+
+.about .row .content {
+  flex: 1;
+  padding: 0; /* hilangkan padding biar mepet */
+  margin: 0; /* buang margin default kalau ada */
+}
+
+.about p {
+  font-size: 1.2rem; /* ukuran font paragraf */
+  color: #fff; /* warna paragraf */
+  line-height: 1.6; /* jarak antar baris */
+  margin-top: 1rem; /* jarak atas paragraf */
+  font-weight: 250; /* ketebalan font */
+}
+
+/*menu section*/
+.menu h2 {
+  margin-bottom: 1rem; /* jarak bawah judul */
+}
+
+
+
+.menu-card-price {
+  text-align: center;
+  margin: 0;
+  font-weight: 100;
+  line-height: 1.5;
+}
+
+
+.menu .row {
+  display: flex;
+  flex-wrap: wrap; /* agar item menu bisa turun ke baris berikutnya */
+  justify-content: center; /* rata tengah */
+  margin-top: 5rem; /* jarak atas */
+}
+
+.paragraf {
+  text-align: center; /* rata tengah */
+  min-width: 30rem; /* lebar minimal */
+  margin: auto; /* agar konten tetap di tengah */
+  font-weight: 100; /* ketebalan font */
+  line-height: 1.5; /* jarak antar baris */
+}
+
+.menu .row .menu-card {
+  width: 30%; /* lebar kartu menu */
+  box-sizing: border-box; /* agar padding dan margin tidak mempengaruhi lebar */
+  text-align: center; /* rata tengah teks dalam kartu */
+  padding: 0.5rem; 
+  margin: 0.5rem;
+}
+
+.menu .row .menu-card img {
+  border-radius: 50%; /* sudut melengkung */
+  width: 120px; /* ukuran gambar */
+}
+
+.menu .row .menu-card .menu-card-title {
+  margin-top: 1.5rem auto 0.5; /* jarak atas judul */
+}
+
+/*contact section*/
+.contact .row {
+  display: flex; 
+  margin-top: 2rem; /* jarak atas */
+  background-color: rgb(109, 66, 12); /* warna latar belakang */
+  
+}
+
+.contact .row .map {
+  flex: 1 1 45rem; /* agar peta mengambil sisa ruang */
+  width: 100%; /* lebar penuh */
+  object-fit:  cover; /* agar peta tetap proporsional */
+}
+
+.sosmed {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* jarak antar elemen */
+  padding: 3rem; /* padding untuk input */
+  align-items: center;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--primary); /* warna latar belakang tombol */
+  border: 2px solid #eee; /* garis tepi tombol */
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #333; /* warna teks tombol */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 320px;
+}
+
+.contact-btn:hover {
+  background-color: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.contact-btn svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+
+
+/*footer*/
+footer {
+  background-color: var(--primary); /* warna latar belakang footer */
+  padding: 1rem 0; /* padding footer */
+  margin-top: 3rem; /* jarak atas footer */
+  text-align: center;
+}
+
+footer .links a:hover {
+  color: #583204; /* warna teks saat hover */
+}
+footer .links {
+  margin-bottom: 1.4rem; /* jarak bawah tautan */
+
+}
+
+footer .links a {
+  color: #fff; /* warna teks tautan */
+  padding: 0.7rem 1rem; /* padding untuk tautan */
+}
+
+footer .credit {
+  font-size: 0.8rem; /* ukuran font kredit */
+  color: #fff; /* warna teks kredit */
+  margin-top: 1rem; /* jarak atas kredit */
+}
+
+footer .credit a {
+  color: #583204; /* warna teks tautan kredit */
+  font-weight: 700; /* ketebalan font tautan kredit */
+}
+/* Media Queries untuk responsif */
+
+/*laptop*/
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%; /* ukuran font lebih kecil */
+  }
+}
+
+
+
+/*tablet*/
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%; /* ukuran font lebih kecil */
+  }
+
+  #hamburger-menu {
+    display: inline-block; /* tampilkan hamburger menu di tablet */
+  }
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%; /* posisikan di bawah navbar */
+    right: -100%; /* sembunyikan di luar layar */
+    background-color: rgba(247, 239, 210, 0.8); /* warna latar belakang */
+    width: 30%;
+    height: 100vh; /* tinggi penuh layar */
+    transition: 0.3s; /* transisi saat muncul */
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0; /* tampilkan menu saat aktif */
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block; /* agar menu bisa di klik */
+    margin: 1.5rem; /* jarak antar menu */
+    padding: 0.5rem; /* padding untuk klik lebih mudah */
+    font-size: 1.5rem; /* ukuran font lebih besar */
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform-origin: scaleX(0.2); /* garis bawah muncul dari tengah */
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0; /* garis bawah muncul dari kiri */
+  }
+
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  .about .row .about-img img {
+    height: 24rem; /* sesuaikan tinggi gambar */
+    width: 100%; /* lebar penuh */
+    object-fit: cover; /* agar gambar tetap proporsional */
+    object-position: center; /* posisikan gambar di tengah */
+  }
+
+  .about .row .content {
+    padding: 0; /* hilangkan padding biar mepet */
+  }
+
+  .about .row .content h3 {
+    margin-top: 1rem; /* jarak atas judul */
+    font-size: 1.6rem; /* ukuran font judul */
+  }
+  .menu p {
+    font-size: 1.2rem; /* ukuran font paragraf */
+  }
+
+  .contact .row {
+    flex-direction: column;  /*ubah arah kolom menjadi vertikal */
+  }
+
+  .contact .row .map {
+    width: 100%; /* lebar penuh */
+    height: 1rem; /* sesuaikan tinggi peta */
+    margin-bottom: 2rem; /* jarak bawah peta */
+  }
+
+  .contact .row form {
+    padding-top: 0; /* padding untuk form */
+  }
+
+  
+}
+
+/*mobile*/
+@media (max-width: 450px) {
+  html {
+    font-size: 55%; /* ukuran font lebih kecil */
+  }
+
+  .about .row .about-img img {
+    width: 380px; /* sesuaikan lebar gambar */
+    height: auto; /* biar proporsional */
+    object-position: center; /* posisikan gambar di tengah */
+  }
+
+  .menu .row .menu-card {
+  text-align: center; /* rata tengah */
+  padding: 0.5rem; /* padding untuk kartu menu */
+  margin: 0.5rem; /* jarak antar kartu */
+  width: 100%; /* lebar penuh */
+}
+
+}
+
+
