@@ -427,7 +427,7 @@ footer .credit a {
   }
 
   .about .row .about-img img {
-    width: 278px; /* sesuaikan lebar gambar */
+    width: 250px; /* sesuaikan lebar gambar */
     height: auto; /* biar proporsional */
     object-position: center; /* posisikan gambar di tengah */
   }
