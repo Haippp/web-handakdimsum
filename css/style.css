@@ -47,7 +47,7 @@ body {
 
 .navbar .navbar-nav a {
   color: #fff; /* warna teks navbar */
-  font-size: 1rem; /* ukuran font */
+  font-size: 1.3rem; /* ukuran font */
   margin: 0 1rem; /* jarak antar menu */
   display: inline-block; /* agar menu bisa di hover */
 }
@@ -128,12 +128,11 @@ body {
 
 .hero .content p {
   font-size: 1.3rem; /* ukuran font paragraf */
-  color: #fff; /* warna paragraf */
+  color: #f0f0f0; /* warna paragraf */
   margin-top: 1rem; /* jarak atas paragraf */
   line-height: 1.4; /* jarak antar baris */
-  font-weight: 230; /* ketebalan font */
+  font-weight: 400; /* ketebalan font */
   text-shadow: 1px 1px 3px rgba(1, 1, 1, 0.5); /* bayangan teks */
-  mix-blend-mode: difference; /* efek pencampuran warna */
 }
 
 .hero .content .cta {
@@ -145,6 +144,12 @@ body {
   border-radius: 0.5rem; /* sudut melengkung tombol */
   box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5); /* bayangan tombol */
   display: inline-block;
+}
+
+.hero .content .cta:hover{
+  background-color: var(--bg); /* warna latar belakang tombol */
+  color: var(--primary);
+  border: var(--primary) solid 1px;
 }
 
 /*about section*/
@@ -399,6 +404,7 @@ footer .credit a {
     margin-top: 1rem; /* jarak atas judul */
     font-size: 1.6rem; /* ukuran font judul */
   }
+  
   .menu p {
     font-size: 1.2rem; /* ukuran font paragraf */
   }
@@ -426,10 +432,18 @@ footer .credit a {
     font-size: 55%; /* ukuran font lebih kecil */
   }
 
+  .navbar {
+    width: 100vw;
+  }
+
+  .logo img {
+  width: 45px; /* ubah ukuran logo jadi kecil */
+  height: auto; /* biar proporsional */
+  display: flex;
+  }
+
   .about .row .about-img img {
-    width: 100%; /* lebar penuh */
-    max-width: 400px; /* lebar maksimal */
-    height: auto; /* biar proporsional */
+    width: 95%; /* lebar penuh */
     margin-bottom: 20px; /* jarak bawah gambar */
   }
 
